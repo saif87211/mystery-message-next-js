@@ -49,6 +49,9 @@ const UserSchema: Schema<User> = new Schema({
   messages: [MessageSchema],
 });
 
+//edge time running in next js (Application dosen't know about application 
+// running first time or already running)
+//if model dosen't exist then create it
 const UserModel =
   (mongoose.models.User as mongoose.Model<User>) ||
   mongoose.model<User>("User", UserSchema);
